@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="xml" type="xmlType"/>
+	<xs:complexType name="CustInternalIdType">
+		<xs:sequence>
+			<xs:element name="CustCIN" type="xs:string"/>
+			<xs:element name="CustCINSfx" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CISInternalIdType">
+		<xs:sequence>
+			<xs:element name="CISCIN" type="xs:string"/>
+			<xs:element name="CISCINsfx" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CustDocType">
+		<xs:sequence>
+			<xs:element name="PrimaryDoc" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocType" type="xs:string"/>
+			<xs:element name="DocTypeDesc" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocNum" type="xs:string"/>
+			<xs:element name="DocIssuePlace" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocIssueCtry" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocIssueDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="DocExpiryDate" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EmailDetailsType">
+		<xs:sequence>
+			<xs:element name="EmailAddr" type="xs:string"/>
+			<xs:element name="EmailStatus" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PhoneType">
+		<xs:sequence>
+			<xs:element name="PhoneCtryCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="PhoneAreaCode" type="xs:string" minOccurs="0"/>
+			<xs:element name="PhoneNum" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ContactDetlType">
+		<xs:sequence>
+			<xs:element name="EmailDetails" type="EmailDetailsType" minOccurs="0"/>
+			<xs:element name="Phone" type="PhoneType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="xmlType">
+		<xs:sequence>
+			<xs:element name="msgId" type="xs:string"/>
+			<xs:element name="RqClientCtry" type="xs:string"/>
+			<xs:element name="CustInternalId" type="CustInternalIdType" minOccurs="0"/>
+			<xs:element name="CISInternalId" type="CISInternalIdType" minOccurs="0"/>
+			<xs:element name="CustDoc" type="CustDocType" minOccurs="0"/>
+			<xs:element name="ContactMode" type="xs:string"/>
+			<xs:element name="LanguageType" type="xs:string"/>
+			<xs:element name="ContactDetl" type="ContactDetlType"/>
+			<xs:element name="UpdType" type="xs:string"/>
+			<xs:element name="AlertType" type="xs:string"/>
+			<xs:element name="SubscribeInd" type="xs:string" minOccurs="0"/>
+			<xs:element name="VerifyStatus" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

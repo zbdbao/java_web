@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!-- Service Name, it can also define as 
+<serviceGroup><service></service></serviceGroup>
+
+ -->  
+<serviceGroup>
+<service name="springService">
+    <description>
+        Spring test
+    </description>
+    <parameter name="ServiceObjectSupplier">
+        org.apache.axis2.extensions.spring.receivers.SpringServletContextObjectSupplier
+    </parameter>
+    <!-- It is the bean which configed in applicationContext.xml in Spring.-->
+    <parameter name="SpringBeanName">
+        SpringBeanService
+    </parameter>
+    <messageReceivers>
+        <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+            class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+    </messageReceivers>
+</service>
+<service name="CalculateService">  
+    <description>  
+        The calculate services.
+    </description>  
+    <!--The definition of services class-->
+    <parameter name="ServiceClass">  
+        com.meme.webservice.test.CalculateService  
+    </parameter>  
+    <!-- method  -->  
+    <operation name="plus">  
+        <!-- The processer of method, 
+        	RPCMessageReceiver, it returns the value,
+            RPCInOnlyMessageReceiver don't return any value.-->  
+        <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"  
+            class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+    </operation>  
+    <operation name="minus">  
+        <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"  
+            class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+    </operation>  
+    <operation name="multiply">  
+        <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"  
+            class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+    </operation>  
+    <operation name="divide">  
+        <messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"  
+            class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />  
+    </operation>  
+</service>  
+</serviceGroup>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- XML Schema Generated from XML Document on Tue Dec 15 2015 18:26:32 GMT+0800 (Malay Peninsula Standard Time) -->
+    <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+    <xs:element name="env:Envelope">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="env:Header">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="com:MsgDetl">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="com:MsgVersion"></xs:element>
+                                        <xs:element name="com:MsgUID"></xs:element>
+                                        <xs:element name="com:SvcVersion"></xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="mustUnderstand" type="xs:string"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="com:Trace">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="com:RqDateTime"></xs:element>
+                                        <xs:element name="com:RqClient">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com:RqClientId"></xs:element>
+                                                    <xs:element name="com:RqClientOrg"></xs:element>
+                                                    <xs:element name="com:RqClientCtry"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="com:Operator">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com:OpInternalId"></xs:element>
+                                                    <xs:element name="com:OpLoginId"></xs:element>
+                                                    <xs:element name="com:OpRole"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="mustUnderstand" type="xs:string"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="env:Body">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="op:retrieveCorrespondence">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="com1:CommonRq">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com1:OrgCode"></xs:element>
+                                                    <xs:element name="com1:ChannelId"></xs:element>
+                                                    <xs:element name="com1:RqSysRef"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="com1:TrailDetl">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com1:OpId"></xs:element>
+                                                    <xs:element name="com1:OpDateTime"></xs:element>
+                                                    <xs:element name="com1:OpMainUnit"></xs:element>
+                                                    <xs:element name="com1:OpSubUnit"></xs:element>
+                                                    <xs:element name="com1:ProcMainUnit"></xs:element>
+                                                    <xs:element name="com1:ProcSubUnit"></xs:element>
+                                                    <xs:element name="com1:AuthDetl">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="com1:AuthId"></xs:element>
+                                                                <xs:element name="com1:AuthDateTime"></xs:element>
+                                                                <xs:element name="com1:AuthMainUnit"></xs:element>
+                                                                <xs:element name="com1:AuthSubUnit"></xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="com1:RecCtrlIn">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com1:MaxRec"></xs:element>
+                                                    <xs:element name="com1:Cursor"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="com1:CISInternalId">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com1:CISCIN" type="xs:string"></xs:element>
+                                                    <xs:element name="com1:CISCINsfx" type="xs:string"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="op:InqType" type="xs:string"></xs:element>
+                                        <xs:element name="op:AlertSentPeriod">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="com1:StartDate" type="xs:date"></xs:element>
+                                                    <xs:element name="com1:EndDate"></xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="xsi:schemaLocation" type="xs:string"></xs:attribute>
+            <xs:attribute name="xmlns:com" type="xs:string"></xs:attribute>
+            <xs:attribute name="xmlns:com1" type="xs:string"></xs:attribute>
+            <xs:attribute name="xmlns:op" type="xs:string"></xs:attribute>
+            <xs:attribute name="xmlns:env" type="xs:string"></xs:attribute>
+            <xs:attribute name="xmlns:xsi" type="xs:string"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

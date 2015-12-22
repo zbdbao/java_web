@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - meme_db@localhost" uuid="fd68b669-cd09-45cc-853c-295144188c5d">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="meme_db"/>
+      <table id="2" parent="1" name="e_user"/>
+      <table id="3" parent="1" name="e_user_credential"/>
+      <column id="4" parent="2" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="5" parent="2" name="user_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="6" parent="2" name="birthday">
+        <mandatory>1</mandatory>
+        <data-type>date</data-type>
+      </column>
+      <column id="7" parent="2" name="sex">
+        <mandatory>1</mandatory>
+        <data-type>char(1)</data-type>
+      </column>
+      <column id="8" parent="2" name="email_address">
+        <data-type>varchar(120)</data-type>
+      </column>
+      <column id="9" parent="2" name="mobile">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="10" parent="2" name="user_type">
+        <mandatory>1</mandatory>
+        <data-type>smallint(6)</data-type>
+      </column>
+      <index id="11" parent="2" name="e_user_user_name_uindex">
+        <columns>user_name</columns>
+        <unique>1</unique>
+      </index>
+      <key id="12" parent="2" name="e_user_user_name_uindex">
+        <columns>user_name</columns>
+        <underlying-index>e_user_user_name_uindex</underlying-index>
+      </key>
+      <key id="13" parent="2" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="14" parent="3" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="15" parent="3" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="16" parent="3" name="create_date">
+        <data-type>datetime</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <column id="17" parent="3" name="status">
+        <mandatory>1</mandatory>
+        <data-type>smallint(6)</data-type>
+      </column>
+      <index id="18" parent="3" name="ix1">
+        <columns>user_id</columns>
+        <unique>1</unique>
+      </index>
+      <key id="19" parent="3" name="ix1">
+        <columns>user_id</columns>
+        <underlying-index>ix1</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>

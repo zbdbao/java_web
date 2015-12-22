@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        ">
+
+    <context:component-scan base-package="com.meme.controller"/>
+<!--
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="locale"></property>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="en" />
+        &lt;!&ndash;property name="cookieName" value="myAppLocaleCookie"></property>
+        <property name="cookieMaxAge" value="3600"></property&ndash;&gt;
+    </bean>
+
+    <bean id="localeChangeInterceptor"
+          class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="locale" />
+    </bean>-->
+
+    <!-- View Resolver -->
+    <!--    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+            <property name="prefix" value="/page/"></property>
+            <property name="suffix" value=".jsp"></property>
+            </bean>
+    -->
+
+
+    <!--
+    &lt;!&ndash; View resolver for different request type eg./1.json /1.xml &ndash;&gt;
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        &lt;!&ndash; Add the support of ignore accept header, or else will encounter 406 error&ndash;&gt;
+        <property name="contentNegotiationManager" ref="cnManager"/>
+
+        <property name="viewResolvers">
+            <list>
+                <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+                <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+                    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+                    <property name="prefix" value="/page/" />
+                    <property name="suffix" value=".jsp"></property>
+                </bean>
+            </list>
+        </property>
+
+        <property name="defaultViews">
+            <list>
+                <bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+                &lt;!&ndash; for application/json &ndash;&gt;
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+                &lt;!&ndash; for application/xml &ndash;&gt;
+                &lt;!&ndash;
+                <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                    <property name="marshaller">
+                        <bean class="org.springframework.oxm.xstream.XStreamMarshaller"/>
+                    </property>
+                </bean>
+                &ndash;&gt;
+            </list>
+        </property>
+    </bean>
+    <bean id="cnManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="ignoreAcceptHeader" value="true"/>
+        <property name="defaultContentType" value="text/html" />
+        <property name="mediaTypes">
+            <map>
+                <entry key="html" value="text/html" />
+                <entry key="pdf" value="application/pdf" />
+                <entry key="xsl" value="application/vnd.ms-excel" />
+                <entry key="xml" value="application/xml" />
+                <entry key="json" value="application/json" />
+            </map>
+        </property>
+    </bean>
+-->
+</beans>
