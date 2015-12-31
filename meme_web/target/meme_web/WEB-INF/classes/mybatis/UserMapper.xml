@@ -49,6 +49,9 @@
           #{mobile,jdbcType=VARCHAR},
           #{userType,typeHandler=com.meme.handler.mybatis.UserTypeHandler}
           )
+        <selectKey resultType="java.lang.Integer" keyProperty="userId">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
     </insert>
 
 </mapper>

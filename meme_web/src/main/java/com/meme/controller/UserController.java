@@ -10,8 +10,6 @@ import com.meme.repository.EnumRepository;
 import com.meme.service.UserService;
 import com.meme.utils.CommanUtils;
 import com.meme.validate.UserSignupValidator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +32,6 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/user")
 @SessionAttributes(SessionKey.GEN_USER)
 public class UserController extends BaseController{
-    final static Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private UserService userService;
 
@@ -85,7 +82,7 @@ public class UserController extends BaseController{
 
     @RequestMapping("/goSignIn")
     public String showSignIn(Model model, HttpSession httpSession) {
-
+        logger.info("showSignIn invoked");
         User user = (User) httpSession.getAttribute(SessionKey.GEN_USER);
 
         if(CommanUtils.isUserValid(user)){//Already signed in

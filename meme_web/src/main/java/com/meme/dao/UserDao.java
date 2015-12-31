@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Component
 @Transactional
-public class UserDao {
+public class UserDao extends BaseDao{
     @Autowired
     private UserMapper userMapper;
 
@@ -29,8 +29,8 @@ public class UserDao {
     public User registerUser(User user, UserCredential userCredential){
 
         userMapper.insertUser(user);
-        user = userMapper.selectUserByUserName(user.getUserName());
-
+//        user = userMapper.selectUserByUserName(user.getUserName());
+        logger.info("user id:: {}", user.getUserId());
         userCredential.setUserId(user.getUserId());
 
         userCredentialMapper.insert(userCredential);

@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <jsp:include page="generic_header.xjsp"/>
 <html>
 <head>
@@ -9,7 +10,7 @@
 
     </script>
 </head>
-<body>
+<body>123
     <form action="/user/signIn" method="post">
         <div> Please input user name and password to login.</div>
         <div><spring:message code="view.user.username"/>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.meme.dao.mapper.TargetMapper" >
+
+    <resultMap id="BaseResultMap" type="com.meme.model.Target" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="target_type" property="targetType" typeHandler="com.meme.handler.mybatis.TargetTypeHandler" />
+        <result column="target_status" property="targetStatus" typeHandler="com.meme.handler.mybatis.TargetStatusHandler" />
+        <result column="super_target_id" property="superTargetId" jdbcType="BIGINT" />
+        <result column="target_tittle" property="targetTittle" jdbcType="VARCHAR" />
+        <result column="target_create_time" property="targetCreateTime" jdbcType="DATE" />
+        <result column="target_complete_time" property="targetCompleteTime" jdbcType="DATE" />
+     </resultMap>
+    <sql id="Base_Column_List" >
+      id, user_id, target_type, target_status, super_target_id, target_tittle, target_create_time, target_complete_time
+    </sql>
+
+    <select id="getTargetListByUserId"  resultMap="BaseResultMap" parameterType="int" >
+        select
+        <include refid="Base_Column_List" />
+        from e_target
+        where
+          user_id=#{userId,jdbcType=INTEGER}
+    </select>
+
+    <insert id="insertTarget"  parameterType="com.meme.model.Target" >
+        insert into e_target
+          ( user_id, target_type, target_status, super_target_id, target_tittle, target_complete_time)
+        values
+          (
+              #{userId,jdbcType=INTEGER},
+              #{targetType,typeHandler=com.meme.handler.mybatis.TargetTypeHandler},
+              #{targetStatus,typeHandler=com.meme.handler.mybatis.TargetStatusHandler},
+              #{superTargetId,jdbcType=BIGINT},
+              #{targetTittle,jdbcType=VARCHAR},
+              #{targetCompleteTime,jdbcType=DATE}
+          )
+        <selectKey resultType="java.lang.Long" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+
+    <insert id="insertTargetContent"  parameterType="com.meme.model.TargetContent" >
+        insert into e_target_content
+          ( target_id, content)
+        values
+          (
+              #{targetId,jdbcType=BIGINT},
+              #{content,jdbcType=VARCHAR}
+          )
+    </insert>
+
+    <select id="selectTargetContentByTargetId"  resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select
+          id,target_id,content
+        from e_target_content
+        where
+          target_id=#{targetId,jdbcType=BIGINT}
+    </select>
+
+
+</mapper>
