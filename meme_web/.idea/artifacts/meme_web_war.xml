@@ -1,8 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="meme_web:war">
+  <artifact type="war" build-on-make="true" name="meme_web:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="meme_web.war">
+    <root id="archive" name="meme_web_war.war">
       <element id="artifact" artifact-name="meme_web:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="dir-copy" path="$PROJECT_DIR$/web/WEB-INF" />
+      </element>
     </root>
   </artifact>
 </component>

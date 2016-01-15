@@ -1,0 +1,230 @@
+body {
+    font-family: Helvetica,Arial,"Hiragino Sans GB","Microsoft Yahei","微软雅黑",STHeiti,"华文细黑",sans-serif;
+    color: #666;
+    font-size: 14px;
+    margin: 0px;
+}
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #84a3e3;
+    cursor: pointer;
+    -moz-transition: all .15s ease-out;
+    -webkit-transition: all .15s ease-out;
+    -o-transition: all .15s ease-out;
+    transition: all .15s ease-out;
+    text-decoration: none;
+}
+a:hover{
+    color: #FFF;
+}
+div{
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: none;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    float: left;
+}
+.logo-img{
+    width: 40px;
+    height: 40px;
+}
+.wrapper{
+    min-width: 1140px;
+}
+.header {
+    width: 100%;
+    display: block;
+    height: 100px;
+    background: #1e1b29;
+    border-bottom: 1px solid silver;
+}
+.header-container{
+    width: 1120px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-container .nav {
+    float: right;
+    line-height: 25px;
+    margin-bottom: 1px;
+}
+.logo, .nav{
+    display: inline;
+    float: left;
+}
+.logo .nav-main{
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.nav .nav-main li a{
+    color: #747474;
+    display: block;
+    height: 28px;
+    padding: 0 20px;
+    line-height: 2.2;
+    font-size: 14px;
+    opacity: 1;
+}
+.nav .nav-main li a:hover{
+    color: #C2C2C2;
+}
+.common-li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+.global-content{
+    display: block;
+    position: relative;
+}
+.auth-body-login {
+    border-radius: 10px;
+    float: right;
+    border-radius: 10px;
+    margin: 100px 120px;
+    width: 286px;
+    height: auto;
+    position: relative;
+    box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.7);
+}
+.close {
+    background: url(/img/logo-global.png) no-repeat -20px -21px;
+    cursor: pointer;
+    display: none;
+    height: 16px;
+    overflow: hidden;
+    opacity: .618;
+    width: 16px;
+    position: absolute;
+    right: 23px;
+    top: 23px;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+}
+
+.auth-body-login .title {
+    background: url(../img/dialog-top-bg.png) repeat-x;
+    border-radius: 13px 13px 0 0;
+    height: 50px;
+    overflow: hidden;
+}
+.auth-body-login .title h4 {
+    border-bottom: #d1d1d1 solid 1px;
+    box-shadow: 0 2px 6px #d1d1d1;
+    color: #666;
+    font-size: 20px;
+    height: 61px;
+    line-height: 61px;
+    padding: 0 0 0 35px;
+}
+.auth-body-login .content {
+    padding: 15px;
+
+}
+.auth-body-login .content .error-msg{
+    color: red;
+    width: 256px;
+    height: auto;
+    font-size: 12px;
+}
+.input{
+    border: #ccc solid 1px;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 48px;
+    width: 256px;
+    line-height: 48px;
+    display:inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+.content ul{
+    padding: 0px;
+    list-style: none;
+}
+.input input{
+    position: relative;
+    height: 32px;
+    width: 200px;
+    border: 0;
+    box-shadow: none;
+    float: left;
+    font-size: 16px;
+    margin: 8px 0 0 0;
+    box-sizing: border-box;
+    outline: none;
+}
+.submit{
+    font-size: 18px;
+    height: 48px;
+    width: 256px;
+    line-height: 48px;
+    display:inline-block;
+    vertical-align: middle;
+    margin-bottom: 40px;
+}
+.submit input{
+    border: #ccc solid 1px;
+    border-radius: 10px;
+    position: relative;
+    height: 48px;
+    width: 256px;
+    box-shadow: none;
+    float: left;
+    font-size: 16px;
+    margin: 8px 0 0 0;
+    box-sizing: border-box;
+    outline: none;
+    background-color: #627dca;
+    color: #fff;
+}.submit input:hover{
+     cursor:pointer;
+     background-color: #4c69b8;
+ }.submit input:focus{
+
+      background-color: #4c69b8;
+  }
+
+
+.icon{
+    float:left;
+}
+.icon i {
+    background: url(/img/dialog-input-icons.png) no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 48px;
+    text-indent: -9999em;
+    width: 48px;
+}
+.icon .password {
+    background-position: -48px;
+}
+.register-content{
+    alignment: center;
+}

@@ -118,6 +118,11 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${jcl.slf4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
         <!-- 3. logback -->
         <dependency>

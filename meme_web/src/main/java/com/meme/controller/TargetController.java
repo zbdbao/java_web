@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @RequestMapping("/target")
 @SessionAttributes(SessionKey.GEN_USER)
-public class TargetController {
-    final static Logger logger = LoggerFactory.getLogger(TargetController.class);
+public class TargetController extends BaseController{
     @Autowired
     private TargetService targetService;
 

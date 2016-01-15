@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<jsp:include page="generic_header.xjsp"/>
+<jsp:include page="generic_header.jsp"/>
 <html>
 <head>
     <jsp:include page="generic_include.jsp"/>
@@ -11,6 +11,6 @@
 </head>
 <body>
 This is the template page.
-<jsp:include page="generic_footer.xjsp"/>
+<jsp:include page="generic_footer.jsp"/>
 </body>
 </html>

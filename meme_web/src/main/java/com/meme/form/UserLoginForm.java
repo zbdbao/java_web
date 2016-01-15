@@ -23,8 +23,8 @@ public class UserLoginForm {
 
     @Override
     public int hashCode() {
-        int result = getUserName().hashCode();
-        result = 31 * result + getPassword().hashCode();
+        int result = getUserName() != null ? getUserName().hashCode() : 0;
+        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
         result = 31 * result + (getOneTimePin() != null ? getOneTimePin().hashCode() : 0);
         return result;
     }

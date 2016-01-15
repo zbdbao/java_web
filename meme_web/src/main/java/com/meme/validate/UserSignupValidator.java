@@ -2,17 +2,13 @@ package com.meme.validate;
 
 import com.meme.model.User;
 import com.meme.utils.StringValidateUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
 
 /**
  * Created by zhangb on 17/11/2015.
  */
-public class UserSignupValidator implements Validator {
-    final static Logger logger = LoggerFactory.getLogger(UserSignupValidator.class);
+public class UserSignupValidator extends BaseValidator{
 
     public boolean supports(Class<?> aClass) {
         return aClass.equals(User.class);

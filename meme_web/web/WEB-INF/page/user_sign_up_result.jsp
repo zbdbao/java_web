@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<jsp:include page="generic_header.xjsp"/>
+<jsp:include page="generic_header.jsp"/>
 <html>
 <head>
-    <jsp:include page="generic_include.xjsp"/>
+    <jsp:include page="generic_include.jsp"/>
     <script type="text/javascript">
 
 

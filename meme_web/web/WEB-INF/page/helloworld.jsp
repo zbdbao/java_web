@@ -1,7 +1,7 @@
-<jsp:include page="generic_header.xjsp"/>
+<jsp:include page="generic_header.jsp"/>
 <html>
 <head>
-    <jsp:include page="generic_include.xjsp"/>
+    <jsp:include page="generic_include.jsp"/>
     <script type="text/javascript">
         $(function(){
             $('#selected_input').click(function(e){
@@ -30,6 +30,6 @@
 <body>
 This is the main page.
 <input id="selected_input" type="button">
-<jsp:include page="generic_footer.xjsp"/>
+<jsp:include page="generic_footer.jsp"/>
 </body>
 </html>

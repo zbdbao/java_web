@@ -1,10 +1,13 @@
 package com.meme.interceptor;
 
+import com.meme.constants.SessionKey;
+import com.meme.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,7 +19,17 @@ public class UserSessionInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        logger.info(" preHandle invoked---MEME");
+        User user = (User) request.getSession().getAttribute(SessionKey.GEN_USER);
+
+        logger.debug("User session :{}", user);
+        if(user == null || user.getUserId() < 0){
+            logger.error("User session not valid, redirect to login.");
+
+//            response.sendRedirect("/user/goSignIn");
+            RequestDispatcher rd = request.getRequestDispatcher("/user/goSignIn");
+            rd.forward(request, response);
+            return false;
+        }
         return super.preHandle(request, response, handler);
     }
 
